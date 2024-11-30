@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> Contact us Colegio de Montalban</title>
+    <link rel="icon" href="images/CDM3x3.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Top Header: Contact Info and log in button -->
+    <header>
+        <div class="navbar">
+            <div class="contact"><a href="#">+63 123456789</a></div>
+
+            <a href="login.html" class="action_btn">Login</a>
+
+        </div>
+        </div>
+    </header>
+    
+
+    <!-- Main Navigation Bar: Sticky Navbar with Logo -->
+    <header id="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/cdm with text.png" alt="Colegio de Montalban Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="enrollment.html">ADMISSION</a></li>
+                <li><a href="news and announcement.html">NEWS & ANNOUNCEMENT</a></li>
+                <li><a href="contact us.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <button class="enroll-btn" onclick="window.location.href='enrollment.html';">Enroll Now</button>
+
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-times"></i> <!-- Close icon will appear when menu is active -->
+        </div>
+        
+        <div class="dropdown_menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.htm">ABOUT</a></li>
+                <li><a href="enrollment.html">ADMISSION</a></li>
+                <li><a href="news and announcement.html">NEWS & ANNOUNCEMENT</a></li>
+                <li><a href="contact us.html">CONTACT</a></li>
+            </ul>
+            <!-- Enroll Now button inside the dropdown -->
+            <button class="enroll-btn">Enroll Now</button>
+        </div>
+    </header>
+
+
+    <section id="about-tab">
+        <div class="title">
+            <h5>CONTACT US</h5>
+            <p><a href="index.html" class="home-link">Home</a> / Contact</p>
+        </div>
+    </div>
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="course-carousel">
+</div>
+</div>
+</div>
+
+<section class="contact-us">
+    <h2>Send us a Message</h2>
+    <p>If you have any questions, please do not hesitate to send us a message. Our staff is happy to answer any questions you may have and provide you with more information about our programs and facilities.</p>
+
+    <!-- Form Section -->
+    <form id="contactForm">
+        <!-- Name -->
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <!-- Subject -->
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject of your message" required>
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Success Message Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <p>Your message has been sent!</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+
+        <div class="message">
+            <p>We will get back to you as soon as possible. Thank you!</p>
+        </div>
+    </section>
+
+
+    <section class="contact-container">
+                <!-- Left: Contact Details -->
+                <div class="contact-details">
+                    <h2>Get in Touch!</h2>
+                    <p><strong>Address:</strong> Kasiglahan Village, Rodriguez RizaL, Philippines, 1860</p>
+                    <p><strong>Email:</strong> info@pnm.edu.ph</p>
+                    <p><strong>Phone:</strong> +63 1234 567 89</p>
+                </div>
+                <div class="google-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.452107945569!2d121.13917640267638!3d14.7506809263815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397bbe8733338e5%3A0xc845d7b6001522e1!2sColegio%20de%20Montalban!5e0!3m2!1sen!2sph!4v1732957587107!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+                            </iframe>
+                </div>
+    </section>
+
+             <!-- Footer Section: Copyright Information -->
+             <footer>
+                <p>&copy; 2024 Colegio de Montalban | All Rights Reserved</p>
+            </footer>
+        
+            <!-- Link to External JavaScript File -->
+            <script src="script.js"></script>
+        </body>
+        
+</html>     

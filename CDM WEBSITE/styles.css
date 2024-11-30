@@ -1,0 +1,2217 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* Body and general styles */
+body {
+    font-family: arial;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/*header*/
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+.Links {
+    list-style-type: none; /* Removes bullet points */
+    display: flex; /* Align items in a row */
+    justify-content: center; /* Centers the icons horizontally */
+    gap: 30px; /* Space between icons */
+    padding: 0;
+    margin: 0;
+}
+
+/* Style each individual icon */
+.Links li {
+    margin: 0;
+}
+
+/* Styling for the icons */
+.social-icon {
+    width: 40px; /* Set the size of the icons */
+    height: 40px; /* Maintain aspect ratio of icon */
+    align-items: center;
+
+
+}
+
+.contact-and-icons {
+    display: flex;
+    align-items: center; /* Align contact and icons vertically */
+    gap: 5px; /* Space between the contact number and the icons */
+}
+
+header {
+    position: relative;
+    padding: 0 2rem;
+    background-color: #033614;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.navbar .contact a{
+    font-size: 20px;   
+}
+
+
+.action_btn {
+    background-color: #075c19;
+    color: #f4f4f4;
+    padding: 7px 40px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: #ffffff;
+    background-color: #0c9429;
+
+
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+/* hamburger */
+/* Hamburger Menu Toggle Button */
+.toggle_btn {
+    display: none; /* Initially hidden, will be shown on mobile */
+    cursor: pointer;
+    font-size: 2rem; /* Size of the hamburger icon */
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.toggle_btn i {
+    display: none; /* Hide both icons initially */
+}
+
+.toggle_btn i.fa-bars {
+    display: inline-block; /* Show hamburger icon */
+}
+
+.toggle_btn i.fa-times {
+    display: none; /* Hide the close icon by default */
+}
+
+/* Dropdown Menu */
+.dropdown_menu {
+    display: none; /* Hide dropdown menu by default */
+    background-color: white;
+    position: absolute;
+    top: 100px; /* Position it below the navbar */
+    right: 0;
+    width: 100%; /* Take up the full width */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for dropdown */
+}
+
+.dropdown_menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown_menu ul li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown_menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.dropdown_menu ul li a:hover {
+    color: #075c19;
+}
+
+/* Enroll Now Button inside the dropdown */
+.dropdown_menu .enroll-btn {
+    padding: 12px 40px;
+    border: none;
+    background-color: #075c19;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Add some space from the links */
+}
+
+.dropdown_menu .enroll-btn:hover {
+    background-color: #0c9429;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .toggle_btn {
+        display: block; /* Show hamburger icon on mobile */
+    }
+
+    /* Show the dropdown menu when it's active */
+    .dropdown_menu.active {
+        display: block;
+    }
+
+    /* When the menu is active, change icon to X */
+    .toggle_btn.active i.fa-bars {
+        display: none; /* Hide hamburger icon */
+    }
+
+    .toggle_btn.active i.fa-times {
+        display: inline-block; /* Show close icon */
+    }
+}
+
+
+/* Main Navigation Bar (Sticky Navbar) */
+#navbar {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: -100px; /* Initially hidden above the viewport */
+    left: 0;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center; /* Center navbar content */
+    align-items: center;
+    transition: top 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;
+}
+
+/* When Navbar Becomes Sticky */
+#navbar.sticky {
+    top: 0; /* Navbar appears at the top when scrolling */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Adds shadow on scroll */
+}
+
+/* Logo Styling in Navbar */
+#navbar .logo {
+    display: flex;
+    justify-content: right; /* Centers logo horizontally */
+    align-items: center; /* Vertically centers logo */
+ 
+}
+
+#navbar .logo img {
+    width: 230px;  /* Default logo size for larger screens */
+    height: auto;  /* Maintain aspect ratio */
+}
+
+/* Navigation Links */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 45px;
+ 
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #7a7a7a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #11531c;
+}
+
+/* Enroll Now Button */
+#navbar .enroll-btn {
+    background-color: #075c19;
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 35px;
+    transition: background-color 0.3s ease;
+    
+}
+
+.toggle_btn {
+    display: none; /* Initially hidden, will be shown on mobile */
+    cursor: pointer;
+    font-size: 2rem; /* Size of the hamburger icon */
+    color: #333; /* Icon color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    margin-left: 20px; /* Space from the left side */
+    cursor: pointer;
+}
+
+.toggle_btn:hover {
+    color: #075c19; /* Change color on hover */
+}
+
+/* Media query to show the hamburger menu on mobile */
+@media screen and (max-width: 768px) {
+    .toggle_btn {
+        display: block; /* Show the hamburger icon on small screens */
+    }
+}
+
+#navbar .enroll-btn:hover {
+    background-color: #0c9429;
+}
+
+@media screen and (max-width: 992px) {
+    /* Hide the Navbar and Enroll Button on mobile */
+    #navbar nav {
+        display: none;
+    }
+    #navbar .enroll-btn {
+        display: none;
+    }
+    
+    /* Ensure the logo is still visible and centered */
+    #navbar .logo {
+        display: block;
+        margin: 0 auto;
+    }
+        #navbar .logo {
+            justify-content: flex-start; /* Align logo to the left on mobile */
+            margin-left: 20px; /* Optional: Add margin to the left for some space */
+        }
+    
+        #navbar .logo img {
+            width: 150px;  /* Adjust logo size for mobile */
+            height: auto;  /* Maintain aspect ratio */
+        }
+    }
+
+
+/* Parallax Background Section */
+.parallax {
+    background-image: url('images/cdm\ building.png');
+    height: 735px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+/* Hero Content Styling (Text and Logo) */
+.parallax .hero {
+    display: flex;
+    flex-direction: row; /* Keep the text and image side by side on larger screens */
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center align all text */
+}
+
+/* Hero Image */
+.parallax img {
+    width: 250px;
+    height: auto;
+    margin-right: 20px;
+    transition: width 0.3s ease; /* Smooth transition for image resizing */
+}
+
+/* Hero Content (Text) */
+.parallax .hero-content {
+    display: flex;
+    flex-direction: column; /* Stack the text vertically */
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.parallax h1 {
+    font-size: 90px;
+    font-weight: bold;
+    margin: 0;
+    text-align: left; /* Default left alignment */
+    transition: font-size 0.3s ease; /* Smooth transition for text resizing */
+}
+
+.parallax p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    text-align: left;
+    font-weight: bold;
+    color: #075c19;
+    transition: font-size 0.3s ease; /* Smooth transition for text resizing */
+}
+
+.parallax button {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    text-align: left;
+    font-weight: bold;
+    color: #ffffff;
+    transition: font-size 0.3s ease; /* Smooth transition for text resizing */
+    border-radius: 30px;
+    padding: 15px 20px;
+    border-style: none;
+    background-color: #075c19;
+    cursor: pointer;
+    
+}
+
+.parallax button:hover {
+    background-color: #0c9429; /* Change background color on hover */
+}
+
+/* Responsive Styles for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .parallax .hero {
+        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        text-align: center; /* Center all text */
+    }
+
+    .parallax img {
+        margin-right: 0; /* Remove margin between image and text */
+        margin-bottom: 20px; /* Add margin below the image */
+        width: 200px; /* Shrink the logo size for tablets */
+    }
+
+    .parallax .hero-content {
+        align-items: center; /* Center the text in mobile mode */
+        margin-left: 0; /* Remove left margin for smaller screens */
+    }
+
+    .parallax h1 {
+        font-size: 3rem; /* Shrink font size for heading */
+        text-align: center; /* Center the heading text in mobile mode */
+    }
+
+    .parallax p {
+        font-size: 1.2rem; /* Shrink font size for paragraph */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .parallax .hero {
+        padding: 20px; /* Add padding to ensure content doesn't touch the edges */
+    }
+
+    .parallax img {
+        width: 150px; /* Further shrink the logo size for very small screens */
+    }
+
+    .parallax h1 {
+        font-size: 2.5rem; /* Further shrink font size for heading on small screens */
+        text-align: center; /* Ensure the heading remains centered */
+    }
+
+    .parallax p {
+        font-size: 1rem; /* Further shrink font size for paragraph on very small screens */
+    }
+}
+
+
+
+
+
+/* General Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+#courses h2 {
+    font-size: 2.5rem;      /* Large font size for the heading */
+    color: #333;            /* Dark text color */
+    margin-bottom: 20px;    /* Space between the heading and paragraph */
+
+}
+
+#courses h4 {
+        font-size: 15px;      /* Large font size for the heading */
+        color: #333;            /* Dark text color */
+        margin-bottom: 20px;    /* Space between the heading and paragraph */
+        text-align: left;
+        font-weight: normal;
+        margin: 20px;
+        margin-bottom: 35px;
+    }    
+
+
+    #courses h5 {
+        font-size: 50px;      /* Large font size for the heading */
+        color: #ffffff;            /* Dark text color */
+        margin-bottom: 20px;    /* Space between the heading and paragraph */
+        text-align: center;
+        font-weight: bold;
+    } 
+
+#courses p {
+    font-size: 20px;      /* Font size for the paragraph */
+    color: #ffffff;            /* Slightly lighter text color */
+    line-height: 1.8;       /* Spacing between lines */
+    max-width: 900px;       /* Limit width of the text */
+    margin: 0 auto;         /* Center the paragraph */
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #courses {
+        padding: 40px 15px;   /* Less padding on smaller screens */
+    }
+
+    #courses h2 {
+        font-size: 2rem;      /* Slightly smaller heading */
+    }
+
+    #courses p {
+        font-size: 1rem;      /* Adjust font size for the paragraph */
+        line-height: 1.6;     /* Adjust line height */
+    }
+}
+
+@media (max-width: 480px) {
+    #courses h2 {
+        font-size: 1.5rem;      /* Further reduce heading font size */
+    }
+
+    #courses p {
+        font-size: 0.9rem;      /* Further reduce paragraph font size */
+    }
+}
+
+/* General Styles for Carousel */
+#courses {
+    padding: 50px 20px;
+    text-align: center;
+    background-image: url('images/Picture2.png');
+
+}
+
+.courses-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+
+}
+
+/* General Styling */
+.carousel-container {
+    max-width: 90%; /* Adjust width of the container */
+    margin: 0 auto;
+    overflow: hidden; /* Hide any content overflowing from the box */
+    text-align: center;
+}
+
+/* Course Item: Individual Card Styling */
+.course-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 230px; /* Fixed width for each course card */
+    text-align: left;
+    transition: transform 0.3s ease;
+    position: relative;
+    border-radius: 30px;
+}
+
+.carousel-wrapper {
+    position: center;           /* Ensure positioning of child elements */
+    max-width: 100%;              /* Ensure it fills the container horizontally */
+    margin: 0 auto;               /* Center it horizontally */
+    overflow: hidden;             /* Hide anything that overflows (important for carousels) */
+    padding: 20px 0;              /* Optional padding for the top and bottom */
+    background-color: transparent;      /* White background, you can adjust this */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow to give a floating effect */
+    border-radius: 10px;         /* Rounded corners */
+    
+}
+
+.course-carousel {
+    display: flex; 
+    transition: transform 1s ease-in-out;
+    will-change: transform;
+}
+
+.course-item {
+    min-width: 300px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    text-align: center;
+    transition: transform 0.5s ease;
+}
+
+.course-item img {
+    margin-top: 30px;
+    width: 50%;
+    height: normal;
+    
+}
+
+.course-item h3 {
+    font-size: 30px;
+    margin-top: 10px;
+    text-align: left;
+    margin: 20px;
+}
+
+.course-item p {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+/* Dragging Cursor Style */
+.course-carousel.dragging {
+    cursor: grabbing;
+}
+
+/* General Styles for About Section */
+#about-section {
+    padding: 80px 20px; /* Increase padding to add more space around the section */
+    background-color: #f4f4f4; /* Light background color for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px; /* Set max width to ensure content is not too wide */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.image-container {
+ 
+    padding: 20px; /* Add padding around the image */
+}
+
+.image-container img {
+    width: 100%; /* Increase the size of the image */
+    height: auto;
+    border-radius: 8px; /* Optional: Add rounded corners to the image */
+    transition: width 0.3s ease; /* Smooth transition for image resizing */
+}
+
+.text-container {
+    flex: 1; /* Allow the text to take up the other half of the space */
+    padding: 20px; /* Add padding around the text */
+    color: #333; /* Dark color for the text */
+}
+
+.text-container h2 {
+    font-size: 3rem; /* Increase font size for the heading */
+    font-weight: bold;
+    margin-bottom: 20px; /* Space below the heading */
+    color: #075c19; /* Green color to match theme */
+}
+
+.text-container p {
+    font-size: 1.5rem; /* Increase font size for the paragraph */
+    line-height: 1.8; /* Increase line height for better readability */
+    color: #555; /* Dark grey for paragraph text */
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Stack the image and text vertically */
+        text-align: center; /* Center the text */
+    }
+
+    .image-container {
+        padding: 20px 0; /* Add padding on top and bottom for the image */
+        width: 100%; /* Make image container take up full width */
+    }
+
+    .text-container {
+        padding: 20px; /* Ensure proper padding around the text */
+        width: 100%; /* Make text container take up full width */
+    }
+
+    .image-container img {
+        width: 400px; /* Increase image size on tablets */
+    }
+
+    .text-container h2 {
+        font-size: 2.5rem; /* Increase font size for heading on mobile */
+    }
+
+    .text-container p {
+        font-size: 1.3rem; /* Increase font size for paragraph on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .parallax .hero {
+        padding: 20px; /* Add padding to ensure content doesn't touch the edges */
+    }
+
+    .image-container img {
+        width: 300px; /* Further increase image size for very small screens */
+    }
+
+    .text-container h2 {
+        font-size: 2rem; /* Further increase font size for heading on small screens */
+    }
+
+    .text-container p {
+        font-size: 1.2rem; /* Increase font size for paragraph on very small screens */
+    }
+}
+
+
+/* Departments Section */
+#departments {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.department-header h5 {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.department-header p {
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* Carousel Container */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 40px;
+    position: center;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.5s ease-in-out; /* Smooth scrolling transition */
+    
+}
+
+
+#about-section {
+    padding: 40px;
+    background-color: #f8f8f8;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center; /* Vertically align items in the center */
+    justify-content: space-between; /* Space between image and text */
+    gap: 30px;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 500px; /* Adjust the max-width based on your preference */
+    height: auto;
+    border-radius: 8px;
+}
+
+.text-container {
+    max-width: 600px; /* You can adjust this width based on the design */
+}
+
+.text-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.text-container p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        align-items: center;
+    }
+
+    .image-container img {
+        max-width: 80%; /* Make image responsive */
+    }
+
+    .text-container {
+        max-width: 90%; /* Adjust text container on small screens */
+    }
+}
+
+
+#departments {
+    padding: 30px;
+    text-align: center;
+}
+
+.department-header h5 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.department-header p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.departments-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.department-card {
+    width: 280px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: #fff;
+}
+
+.department-card:hover {
+    transform: translateY(-10px);
+}
+
+.department-card img {
+    margin-top: 30px;
+    width: 60%;
+    height: normal;
+    
+}
+
+.department-info {
+    padding: 15px;
+}
+
+.department-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.department-info h4 {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+@media screen and (max-width: 768px) {
+    .department-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+#enrollment-steps {
+    padding: 40px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.steps-header h5 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.steps-header p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.steps-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center; /* Horizontally centers the container */
+    align-items: center; /* Vertically centers the container */
+    max-width: 1200px; /* Optionally, limit the width of the container */
+    margin: 0 auto; /* Automatically adjust left and right margins */
+}
+
+.step-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 280px; /* Keep the width fixed */
+    height: 380px; /* Set a fixed height to make the cards uniform */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 400px; /* Ensure that the card does not stretch too wide */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out the elements (icon, title, and description) */
+}
+
+.step-icon {
+    margin-bottom: 15px;
+}
+
+.step-info {
+    flex-grow: 1; /* Allow the text part to take up remaining space */
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+}
+
+.step-icon img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.step-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.step-info p {
+    font-size: 1rem;
+    color: #666;
+    text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    .steps-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step-card {
+        width: 90%;
+    }
+}
+
+
+/* Contact Form Styling */
+#contact .contact-container form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact button {
+    background-color: #075c19;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #0c9429;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #033614;
+    color: white;
+    position: relative;
+    width: auto;
+}
+
+
+/* log in page*/
+
+
+.login-section {
+    
+    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    height: 100%; /* Full height of the viewport */
+    width: 100%;  /* Full width of the viewport */
+}
+
+.login-container {
+    display: flex;
+    width: 100%;
+    height: 900px;
+}
+
+/* Left side: Login Form */
+.login-form {
+    background-color: white;
+    padding: 190px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+ 
+
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;  /* Adjust logo size */
+    height: auto;
+
+ 
+    
+}
+
+/* Header for login form */
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;  /* Prevent text from wrapping */
+    overflow: hidden;     /* Hide overflow text */
+    text-overflow: ellipsis; /* Optional: add ellipsis if text overflows */
+}
+
+.login-form h1 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: lighter;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;  /* Prevent text from wrapping */
+    overflow: hidden;     /* Hide overflow text */
+    text-overflow: ellipsis; /* Optional: add ellipsis if text overflows */
+}
+
+/* Input styling */
+.textbox {
+    margin-bottom: 15px;
+ 
+}
+
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    
+}
+
+/* Button styling */
+.login-btn button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.login-btn button:hover {
+    background-color: #45a049;
+}
+
+/* Don't have an account button */
+.no-account {
+    text-align: center; /* Centers the content inside the div */
+    margin-top: 20px; /* Adds space above */
+}
+
+/* Style for the link */
+.signup-link {
+    font-size: 16px;
+    color: #4CAF50; /* Green color for the text */
+    text-decoration: none; /* Removes underline */
+}
+
+.signup-link:hover {
+    color: #45a049; /* Darker green color when hovering */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.signup-btn {
+    background: none;
+    border: none;
+    color: #4CAF50;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.signup-btn:hover {
+    color: #45a049;
+}
+
+/* Right side: Photo */
+.photo-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the whole area */
+ 
+}
+
+
+
+/* Container for the terms and conditions checkbox */
+.terms {
+    display: flex;
+    align-items: center; /* Vertically align the checkbox and text */
+    margin: 20px 0; /* Add spacing around the checkbox */
+}
+
+/* Styling for the checkbox input */
+.terms input[type="checkbox"] {
+    margin-right: 10px; /* Add space between checkbox and label */
+    width: 18px; /* Set a standard size for the checkbox */
+    height: 18px; /* Set a standard size for the checkbox */
+    cursor: pointer; /* Make the checkbox clickable */
+}
+
+/* Styling for the label text */
+.terms label {
+    font-size: 14px; /* Set font size for the label */
+    color: #333; /* Dark gray color for text */
+    cursor: pointer; /* Make the label clickable like the checkbox */
+    line-height: 1.5; /* Add some space between lines in case of multiple lines of text */
+}
+
+/* Add hover effect on the checkbox and label */
+.terms input[type="checkbox"]:hover,
+.terms label:hover {
+    color: #155718; /* Change text color on hover */
+}
+
+/* Ensure proper responsiveness */
+@media (max-width: 768px) {
+    .terms {
+        font-size: 16px; /* Increase text size on smaller screens */
+    }
+
+    .terms input[type="checkbox"] {
+        width: 20px; /* Make checkbox slightly bigger on smaller screens */
+        height: 20px; /* Make checkbox slightly bigger on smaller screens */
+    }
+}
+
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    .login-section {
+        grid-template-columns: 1fr; /* Stack the columns on top of each other */
+        grid-template-rows: auto auto; /* Make sure both items stack vertically */
+    }
+
+    /* Ensure the photo section moves below the form */
+    .login-container {
+        flex-direction: column; /* Stack the form and photo vertically */
+    }
+
+    .login-form {
+        padding: 20px;
+    }
+
+    .textbox input {
+        font-size: 14px;
+    }
+
+    .login-btn button {
+        font-size: 14px;
+    }
+
+    .signup-btn {
+        font-size: 12px;
+    }
+
+    .photo-side {
+        order: 1; /* Moves photo to the bottom on mobile */
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: 15px;
+    }
+
+    .textbox input {
+        font-size: 12px;
+    }
+
+    .login-btn button {
+        font-size: 12px;
+    }
+
+    .signup-btn {
+        font-size: 12px;
+    }
+}
+
+
+/* sign up page */
+
+.signup-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    height: 100vh; /* Full height of the viewport */
+    width: 100%;  /* Full width of the viewport */
+    
+}
+
+.signup-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Left side: Sign Up Form */
+.signup-form {
+    background-color: white;
+    padding: 190px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 96.5%;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;  /* Adjust logo size */
+    height: auto;
+}
+
+/* Header for Sign Up Form */
+.signup-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;  /* Prevent text from wrapping */
+   
+    text-overflow: ellipsis; /* Optional: add ellipsis if text overflows */
+}
+
+.signup-form h1 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: lighter;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;  /* Prevent text from wrapping */
+
+    text-overflow: ellipsis; /* Optional: add ellipsis if text overflows */
+}
+
+/* Input styling */
+.textbox {
+    margin-bottom: 15px;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Terms & Conditions Styling */
+.terms {
+    margin-bottom: 20px;
+}
+
+.terms label {
+    font-size: 14px;
+}
+
+/* Button styling */
+.signup-btn button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-btn button:hover {
+    background-color: #45a049;
+}
+
+/* Already have an account button */
+.already-account {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-btn {
+    background: none;
+    border: none;
+    color: #4CAF50;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    
+}
+
+.login-btn:hover {
+    color: #155718;
+}
+
+
+
+/* Right side: Image */
+.signup-photo-side img {
+    width: 400%;            /* Set the image width to 80% of the container */
+    height: auto;          /* Maintain the image's natural aspect ratio */
+    object-fit: contain;    /* Ensure the whole image is visible while maintaining the aspect ratio */
+    justify-content: right; /* Optional: Centers the image horizontally within the container */
+    align-items: center;     /* Optional: Centers the image vertically within the container */
+}
+
+/* Mobile Responsive - Stacking Image Below Form */
+@media (max-width: 768px) {
+    /* On small screens, the photo side should no longer be fixed */
+    .signup-photo-side {
+        position: relative; /* Change from fixed to relative */
+        width: 100%;        /* Full width of the screen */
+        height: 300px;      /* Adjust height to fit the mobile layout */
+        background: rgba(0, 0, 0, 0.1); /* Optional: Maintain overlay effect */
+        border-left: none;  /* Remove border for smaller screens */
+    }
+
+    /* Adjust the image to fit well on small screens */
+    .signup-photo-side img {
+        width: 100%;        /* Image will take the full width of the container */
+        height: auto;       /* Image height will adjust accordingly */
+        object-fit: contain; /* Keep the image fully visible without cropping */
+    }
+}
+
+/* For even smaller screens, like mobile phones */
+@media (max-width: 500px) {
+    /* Adjust the photo section for smaller devices */
+    .signup-photo-side {
+        height: 250px;      /* Reduce the height further */
+    }
+
+    .signup-photo-side img {
+        width: 100%;        /* Ensure the image is responsive */
+        height: auto;       /* Maintain aspect ratio */
+    }
+}
+
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    .signup-section {
+        grid-template-columns: 1fr; /* Stack the columns on top of each other */
+        grid-template-rows: auto auto; /* Make sure both items stack vertically */
+    }
+
+    /* Ensure the photo section moves below the form */
+    .signup-container {
+        flex-direction: column; /* Stack the form and photo vertically */
+    }
+
+    .signup-form {
+        padding: 20px;
+    }
+
+    .textbox input {
+        font-size: 14px;
+    }
+
+    .signup-btn button {
+        font-size: 14px;
+    }
+
+    .login-btn {
+        font-size: 12px;
+    }
+
+    .photo-side {
+        order: 1; /* Moves photo to the bottom on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-form {
+        padding: 15px;
+    }
+
+    .textbox input {
+        font-size: 12px;
+    }
+
+    .signup-btn button {
+        font-size: 12px;
+    }
+
+    .login-btn {
+        font-size: 12px;
+    }
+}
+
+
+/* About page */
+
+
+#about-tab {
+    padding: 50px 0px 0px 0px;
+    text-align: center;
+    background-image: url('images/Picture2.png');
+    height: 200px;
+
+}
+
+
+/* Styling the Heading */
+.title h5 {
+    font-size: 60px; /* Larger font size for the title */
+    color: #ffffff; /* Green color for the title */
+    font-weight: bolder; /* Make the title bold */
+    margin-bottom: 15px; /* Space between title and paragraph */
+    text-align: left;
+    margin-left: 200px;
+    
+    
+}
+
+
+a {
+    text-decoration: none; /* Remove underline from the link */
+    color: #ffffff; /* Change the link color to green */
+}
+
+a:hover {
+    color:#4CAF50; /* lighten yellow green when the link is hovered */
+
+
+}
+
+/* Styling the Paragraph (p) */
+.title p {
+    font-size: 18px; /* Moderate font size for the description */
+    color: #ffffff; /* Dark gray color for text */
+    line-height: 1.6; /* Line height for better readability */
+    max-width: 800px; /* Limit the paragraph width */
+    margin: 0 auto; /* Center the paragraph */
+    font-family: 'Arial', sans-serif; /* Font family for the paragraph */
+    margin-left: 200px;
+    text-align: left;
+
+}
+.title p {
+    font-size: 18px; /* Moderate font size for the description */
+    color: #ffffff; /* White color for text */
+    line-height: 1.6; /* Line height for better readability */
+    max-width: 800px; /* Limit the paragraph width */
+    margin: 0 auto; /* Center the paragraph */
+    font-family: 'Arial', sans-serif; /* Font family for the paragraph */
+    margin-left: 200px; /* Left margin for larger screens */
+    text-align: left;
+}
+
+
+@media (max-width: 1024px) {
+    .title h5 {
+        font-size: 50px; /* Smaller font size on tablets */
+        margin-left: 100px; /* Adjust margin for smaller screens */
+    }
+
+    a {
+        font-size: 16px; /* Adjust font size for links on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .title h5 {
+        font-size: 40px; /* Smaller font size on smaller screens (like mobile) */
+        padding-left: 0%;
+    }
+
+    a {
+        font-size: 14px; /* Smaller font size for mobile links */
+    }
+}
+
+@media (max-width: 480px) {
+    .title h5 {
+        font-size: 30px; /* Even smaller font size on very small screens */
+        margin-left: 20px; /* Move it closer to the left edge */
+    }
+
+    a {
+        font-size: 12px; /* Smaller font size for mobile links */
+    }
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .title h5 {
+        font-size: 50px; /* Slightly smaller font size on tablets */
+        margin-left: 100px; /* Reduce left margin on tablets */
+    }
+
+    .title p {
+        font-size: 16px; /* Slightly smaller font size for paragraph on tablets */
+        margin-left: 100px; /* Adjust left margin for the paragraph */
+    }
+}
+
+@media (max-width: 768px) {
+    .title h5 {
+        font-size: 40px; /* Smaller font size on smaller screens */
+        margin-left: 30px; /* Reduce left margin for mobile */
+    }
+
+    .title p {
+        font-size: 14px; /* Smaller font size for the paragraph */
+        margin-left: 30px; /* Adjust left margin for the paragraph */
+        max-width: 100%; /* Remove width restriction for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .title h5 {
+        font-size: 30px; /* Even smaller font size on very small screens */
+        margin-left: 10px; /* Very small left margin for mobile */
+    }
+
+    .title p {
+        font-size: 12px; /* Smaller font size for the paragraph on very small screens */
+        margin-left: 10px; /* Very small left margin for mobile */
+    }
+}
+
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .title h5 {
+        font-size: 24px; /* Reduce the heading size on smaller screens */
+    }
+
+    .title p {
+        font-size: 16px; /* Adjust paragraph font size for mobile screens */
+        padding: 0 15px; /* Add padding for smaller screens */
+    }
+    #about-tab {
+        height: 145px;
+    }
+}
+
+    
+
+/* General styling for the section */
+#photo-description-section {
+    padding: 40px;
+    background-color: #f4f4f4;
+}
+
+/* Container that holds both the image and the description */
+#photo-description-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+    text-align: center;
+}
+
+/* Styling for the image */
+#photo-description-section .image img {
+    width: 100%;
+    max-width: 800px; /* Limit the image size */
+    height: auto;
+    border-radius: 8px;
+    
+}
+
+/* Styling for the description */
+#photo-description-section .description {
+    max-width: 700px;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Title styling */
+#photo-description-section .description h3 {
+    font-size: 45px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: justify;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
+
+/* Paragraph styling */
+#photo-description-section .description p {
+    font-size: 20px;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0 auto;
+    margin-left: 20px;
+}
+
+/* Centered Title and Paragraph Styling */
+#centered-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centers text horizontally */
+}
+
+/* Title styling for #centered-description */
+#centered-description .description h3 {
+    font-size: 50px;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    text-align: justify; /* Centers the title text horizontally */
+    
+}
+
+/* Paragraph styling for #centered-description */
+#centered-description .description p {
+    font-size: 20px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 auto;
+    text-align: justify; /* Centers the paragraph text horizontally */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    /* On tablets, make the image and description stack */
+    #photo-description-section .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    /* On mobile, reduce the font size for description */
+    #photo-description-section .description h3 {
+        font-size: 24px;
+    }
+
+    #photo-description-section .description p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* On very small screens, make the image width 100% */
+    #photo-description-section .image img {
+        max-width: 100%;
+    }
+
+    /* Reduce the margin and padding on smaller screens */
+    #photo-description-section .description {
+        padding: 10px;
+    }
+}
+
+
+
+
+
+/* Enrollment page */
+
+/* General styles for the form container */
+.enrollment-form-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 50px 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    margin-bottom: 50px;
+   
+    
+}
+
+.enrollment-form-container p {
+    background-color:#dddddd2d;
+    padding: 20px;
+    border-radius: 30px;
+    text-align: justify;
+    margin-bottom: 30px;
+
+    
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-weight: bolder;
+    
+}
+
+h3 {
+    margin-top: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    padding: 3px;
+
+}
+
+button.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color:#075c19;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.form-section a {
+    color: #333;
+    text-decoration: none;
+
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Container for the checkbox and link */
+.terms-section {
+    display: flex;              /* Aligns checkbox and link in a row */
+    align-items: center;        /* Vertically center the checkbox and text */
+    justify-content: flex-start; /* Aligns the content to the left */
+    margin: 10px 0;             /* Adds vertical space around the section */
+}
+
+/* Styling for the checkbox */
+.terms-section input[type="checkbox"] {
+    margin-right: 10px;         /* Adds space between the checkbox and the text */
+    width: 20px;                /* Optional: Sets the size of the checkbox */
+    height: 20px;               /* Optional: Sets the size of the checkbox */
+}
+
+/* Styling for the link (Terms & Conditions text) */
+.terms-section .terms-link {
+    text-decoration: none;      /* Removes underline from the link */
+    color: #333;                /* Sets the text color of the link */
+    font-size: 16px;            /* Adjusts font size for the link */
+    line-height: 1.5;           /* Increases line height for readability */
+}
+
+.terms-section a{
+    color: #666;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 18px;              /* Larger text size for better readability */
+    font-weight:lighter;             /* Makes the label bold */
+    color: #333;                 /* Dark text color for the label */
+    margin-bottom: 8px;           /* Adds spacing between the label and the select */
+    display: block;               /* Makes the label a block element, so it takes full width */
+    font-family: 'Arial', sans-serif;  /* Sets a clean sans-serif font */
+}
+
+/* Style for the select dropdown */
+select {
+    width: 100%;                  /* Make the select element take the full width of its container */
+    padding: 12px 16px;           /* Adds padding inside the select box for spacing */
+    font-size: 16px;              /* Sets the font size inside the select dropdown */
+    font-family: 'Arial', sans-serif; /* Uses the same font family for consistency */
+    border: 2px solid #ccc;       /* Light gray border for the select box */
+    border-radius: 4px;           /* Rounded corners */
+    background-color: #f9f9f9;    /* Light background color for the select box */
+    color: #333;                  /* Dark text color for better visibility */
+    appearance: none;             /* Removes default appearance of the select dropdown */
+    cursor: pointer;             /* Changes cursor to a pointer to indicate it's clickable */
+    transition: border-color 0.3s ease; /* Smooth transition effect on focus */
+}
+
+/* Change the border color of the select box on focus */
+select:focus {
+    border-color: #075c19;        /* Blue border color when the select element is focused */
+    outline: none;                /* Removes the default outline */
+}
+
+/* Optional: Custom styling for the option text */
+select option {
+    font-size: 16px;              /* Makes the font size in options consistent */
+    color: #333;                  /* Keeps the text color dark for the options */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    label {
+        font-size: 16px;          /* Adjust font size on smaller screens */
+    }
+
+    select {
+        font-size: 14px;          /* Adjust font size of the select dropdown */
+        padding: 10px 12px;       /* Slightly smaller padding on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    label {
+        font-size: 14px;          /* Further reduce the label font size for mobile */
+    }
+
+    select {
+        font-size: 14px;          /* Keep font size consistent for select dropdown */
+        padding: 8px 10px;        /* Reduce padding for mobile */
+    }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+    .enrollment-form-container {
+        width: 90%; /* Make form take up 90% of the width on smaller screens */
+    }
+
+    /* Adjust input and select fields to have larger padding for easier use on mobile */
+    input, select {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button.submit-btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive Design - Extra Small Devices (Mobile Phones) */
+@media (max-width: 480px) {
+    .enrollment-form-container {
+        width: 95%; /* Make form take up 95% of the width on very small screens */
+    }
+
+    input, select {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button.submit-btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 24px; /* Smaller heading on mobile */
+    }
+
+    h3 {
+        font-size: 18px; /* Smaller sub-headings on mobile */
+    }
+}
+
+/* Announcement and news */
+
+/* News and Announcements Section */
+.news-announcements {
+    padding: 40px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.news-announcements h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: nowrap; /* Keeps the cards on the same row */
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Individual Card Styling */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px; /* Makes the card wide */
+    flex: 1;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Image inside the card */
+.card img {
+    width: 100%;
+    height: 300px; /* Makes the image fixed height */
+    object-fit: cover; /* Ensures the image covers the area */
+}
+
+/* Card Content (Title and Description) */
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .card-container {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+
+
+
+
+
+
+
+/* Contact us */
+
+.contact-us {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styling */
+.contact-us h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.contact-us p{
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0px 50px;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Label Styling */
+.contact-us label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #555;
+    text-align: left;
+}
+
+/* Input & Textarea Styling */
+.contact-us input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #333;
+    background-color: #7a7a7a1e;
+    padding: 20px;
+}
+
+/* Textarea Specific Styling */
+.textarea {
+    height: 150px;
+    resize: vertical;
+    background-color: #7a7a7a1e;
+    border-radius: 20px;
+}
+
+/* Button Styling */
+.contact-us button[type="submit"] {
+    background-color:#155718;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 50%;
+    height: 50px;
+    
+}
+
+/* Button Hover Styling */
+.contact-us button[type="submit"]:hover {
+    background-color:#0c9429;
+}
+
+/* Success Message Styling */
+.message {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Contact Address with map */
+
+
+/* Container for the contact details and map */
+.contact-container {
+    display: flex; /* Flex container to arrange items in a row */
+    flex-wrap: wrap; /* Allows the items to wrap on smaller screens */
+    justify-content: space-between; /* Space between the contact info and map */
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1200px; /* Maximum width for larger screens */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Left Section: Contact Details */
+.contact-details {
+    width: 40%; /* Take 40% of the container width */
+    text-align: left;
+    background-color: #7a7a7a15;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact-details h2 {
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.contact-details p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Right Section: Google Map */
+.google-map {
+    display: flex; /* Flex container to arrange items in a row */
+    flex-wrap: wrap; /* Allows the items to wrap on smaller screens */
+    width: 60%; /* Take 60% of the container width */
+    height: 450px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    
+}
+
+/* Responsive styling for smaller screens (below 768px) */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stacks the sections vertically */
+        align-items: center; /* Centers the sections */
+    }
+
+    .contact-details,
+    .google-map {
+        width: 100%; /* Make both sections take full width */
+        margin-bottom: 20px; /* Add space between the sections */
+    }
+
+    .google-map {
+        height: 300px; /* Adjust the map height for smaller screens */
+        margin-bottom: 20px; /* Add space between the sections */
+    }
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with transparency */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10% auto;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    margin-top: 250px;
+}
+
+.modal button {
+    background-color: #155718;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background-color: #0c9429;
+}
+

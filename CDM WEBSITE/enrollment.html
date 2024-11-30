@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> Enrollment Colegio de Montalban</title>
+    <link rel="icon" href="images/CDM3x3.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Top Header: Contact Info and log in button -->
+    <header>
+        <div class="navbar">
+            <div class="contact"><a href="#">+63 123456789</a></div>
+
+            <a href="login.html" class="action_btn">Login</a>
+
+        </div>
+        </div>
+    </header>
+    
+
+    <!-- Main Navigation Bar: Sticky Navbar with Logo -->
+    <header id="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/cdm with text.png" alt="Colegio de Montalban Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="enrollment.html">ADMISSION</a></li>
+                <li><a href="news and announcement.html">NEWS & ANNOUNCEMENT</a></li>
+                <li><a href="contact us.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <button class="enroll-btn" onclick="window.location.href='enrollment.html';">Enroll Now</button>
+
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-times"></i> <!-- Close icon will appear when menu is active -->
+        </div>
+        
+        <div class="dropdown_menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.htm">ABOUT</a></li>
+                <li><a href="enrollment.html">ADMISSION</a></li>
+                <li><a href="news and announcement.html">NEWS & ANNOUNCEMENT</a></li>
+                <li><a href="contact us.html">CONTACT</a></li>
+            </ul>
+            <!-- Enroll Now button inside the dropdown -->
+            <button class="enroll-btn">Enroll Now</button>
+        </div>
+    </header>
+    
+
+    <section id="about-tab">
+        <div class="title">
+            <h5>ENROLLMENT FORM</h5>
+            <p><a href="index.html" class="home-link">Home</a> / Online Admission</p>
+        </div>
+    </div>
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="course-carousel">
+</div>
+</div>
+</div>
+    </section>
+
+<section>
+    <div class="enrollment-form-container">
+        <h2>Enrollment Form</h2>
+        <p>This enrollment form is exclusively for NEW STUDENTS. Returning/Old students can login to their portal accounts to submit their new enrollment registrations.</p>
+    
+        <form action="#" method="POST">
+            <!-- School Year and Grade Level -->
+            <div class="form-section">
+                <label for="school-year">School Year</label>
+                <input type="text" id="school-year" name="school-year" value="2024 - 2025" readonly>
+    
+                <label for="grade-level">Year Level *</label>
+                <select id="grade-level" name="grade-level" required>
+                    <option value="" disabled selected>Select Year Level</option>
+                    <option value="freshman">Freshmen</option>
+                    <option value="2nd year">2nd Year</option>
+                    <option value="3rd year">Third Year</option>
+                    <option value="4th year">Fourth Year</option>
+                    <option value="irregular">Irregular</option>
+                    <!-- Add more grade options as needed -->
+                </select>
+    
+                <label for="pprogram-plan">Program *</label>
+                <select id="program-plan" name="program-plan" required>
+                    <option value="" disabled selected>Select your Course</option>
+                    <option value="BSIT">BSIT Bachelor of Science in Information Technology</option>
+                    <option value="BSCPE">BSCPE Bachelor of Science in Computer Engineering</option>
+                    <option value="BSED-SCI">BSED-SCI Bachelor of Secondary Education major in Science</option>
+                    <option value="BEED-GEN">BEED-GEN Bachelor of Elementary Education - Generalis </option>
+                    <option value="BEED-ECED">BEED-ECED Bachelor of Early Childhood Education</option>
+                    <option value="BTLED-ICT">BTLED-ICT Bachelor of Technology and Livelihood Education major in Information and Communication Technology</option>
+                    <option value="BSBA-HRM">BSBA-HRM Bachelor of Science in Business Administration Major in Human Resource Management</option>
+                    <option value="BSE">BSE Bachelor of Science in Entrepreneurship</option>
+                </select>
+            </div>
+    
+            <!-- Student Information -->
+            <div class="form-section">
+                <h3>Student Information</h3>
+                <label for="lrn">LRN *</label>
+                <input type="text" id="lrn" name="lrn" required>
+    
+                <label for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last-name" required>
+    
+                <label for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first-name" required>
+    
+                <label for="middle-name">Middle Name</label>
+                <input type="text" id="middle-name" name="middle-name">
+    
+                <label for="extension">Extension</label>
+                <input type="text" id="extension" name="extension">
+    
+                <label for="sex">Sex *</label>
+                <select id="sex" name="sex" required>
+                    <option value="" disabled selected>Select Sex</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+    
+                <label for="dob">Date Of Birth (YYYY-MM-DD) *</label>
+                <input type="date" id="dob" name="dob" required>
+    
+                <label for="birth-place">Birth Place *</label>
+                <input type="text" id="birth-place" name="birth-place" required>
+    
+                <label for="nationality">Nationality *</label>
+                <input type="text" id="nationality" name="nationality" required>
+    
+                <label for="mother-tongue">Mother Tongue *</label>
+                <input type="text" id="mother-tongue" name="mother-tongue" required>
+    
+                <label for="ethnic-group">Ethnic Group</label>
+                <input type="text" id="ethnic-group" name="ethnic-group">
+    
+                <label for="religion">Religion *</label>
+                <input type="text" id="religion" name="religion" required>
+            </div>
+    
+            <!-- Contact & Address -->
+            <div class="form-section">
+                <h3>Contact & Address</h3>
+                <label for="contact-no">Contact No</label>
+                <input type="text" id="contact-no" name="contact-no">
+    
+                <label for="house-street">House/Street</label>
+                <input type="text" id="house-street" name="house-street">
+    
+                <label for="barangay">Barangay *</label>
+                <input type="text" id="barangay" name="barangay" required>
+    
+                <label for="municipality">Municipality/City *</label>
+                <input type="text" id="municipality" name="municipality" required>
+    
+                <label for="province">Province *</label>
+                <input type="text" id="province" name="province" required>
+            </div>
+    
+            <!-- Parents & Guardian Information -->
+            <div class="form-section">
+                <h3>Parents & Guardian</h3>
+                <label for="father-name">Father's Name *</label>
+                <input type="text" id="father-name" name="father-name" required>
+    
+                <label for="father-occupation">Father's Occupation *</label>
+                <input type="text" id="father-occupation" name="father-occupation" required>
+    
+                <label for="father-work">Father's Place of Work *</label>
+                <input type="text" id="father-work" name="father-work" required>
+    
+                <label for="father-contact">Father's Contact No *</label>
+                <input type="text" id="father-contact" name="father-contact" required>
+    
+                <label for="mother-name">Mother's Name *</label>
+                <input type="text" id="mother-name" name="mother-name" required>
+    
+                <label for="mother-occupation">Mother's Occupation *</label>
+                <input type="text" id="mother-occupation" name="mother-occupation" required>
+    
+                <label for="mother-work">Mother's Place of Work *</label>
+                <input type="text" id="mother-work" name="mother-work" required>
+    
+                <label for="mother-contact">Mother's Contact No *</label>
+                <input type="text" id="mother-contact" name="mother-contact" required>
+    
+                <label for="guardian-name">Guardian Name</label>
+                <input type="text" id="guardian-name" name="guardian-name">
+    
+                <label for="guardian-occupation">Guardian Occupation</label>
+                <input type="text" id="guardian-occupation" name="guardian-occupation">
+    
+                <label for="guardian-work">Guardian Place of Work</label>
+                <input type="text" id="guardian-work" name="guardian-work">
+    
+                <label for="guardian-contact">Guardian Contact No</label>
+                <input type="text" id="guardian-contact" name="guardian-contact">
+    
+                <label for="guardian-relationship">Guardian Relationship</label>
+                <input type="text" id="guardian-relationship" name="guardian-relationship">
+            </div>
+    
+            <!-- Last School Attended -->
+            <div class="form-section">
+                <h3>Last School</h3>
+                <label for="last-school">Last School Attended</label>
+                <input type="text" id="last-school" name="last-school">
+    
+                <label for="last-school-year">School Year</label>
+                <input type="text" id="last-school-year" name="last-school-year">
+    
+                <label for="last-school-address">Address</label>
+                <input type="text" id="last-school-address" name="last-school-address">
+            </div>
+    
+            <!-- Upload Requirements -->
+            <div class="form-section">
+                <h3>Requirements</h3>
+                <label for="birth-certificate">PSA Birth Certificate</label>
+                <input type="file" id="birth-certificate" name="birth-certificate" accept="image/*, .pdf" multiple>
+    
+                <label for="good-moral">Good Moral</label>
+                <input type="file" id="good-moral" name="good-moral" accept="image/*, .pdf" multiple>
+    
+                <label for="form-138">Form - 138 (Report Card)</label>
+                <input type="file" id="form-138" name="form-138" accept="image/*, .pdf" multiple>
+    
+                <label for="form-137">Form - 137 (Permanent School Record)</label>
+                <input type="file" id="form-137" name="form-137" accept="image/*, .pdf" multiple>
+    
+    
+            <!-- Login Credentials -->
+            <div class="form-section">
+                <h3>Login Credentials</h3>
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="username">Username *</label>
+                <input type="text" id="username" name="username" required>
+    
+                <label for="password">Password *</label>
+                <input type="password" id="password" name="password" required>
+    
+                <label for="confirm-password">Confirm Password *</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+    
+            <!-- Terms and Conditions -->
+            <section class="terms-section">
+                <input type="checkbox" name="terms">
+                <a>I agree to the Terms & Conditions and Privacy Notice</a>
+            </section>
+    
+            <button type="submit" class="submit-btn">Submit Enrollment</button>
+        </form>
+        
+    </div>
+    </div>
+</section>
+
+            <!-- Footer Section: Copyright Information -->
+            <footer>
+                <p>&copy; 2024 Colegio de Montalban | All Rights Reserved</p>
+            </footer>
+        
+            <!-- Link to External JavaScript File -->
+            <script src="script.js"></script>
+        </body>
+        
+        </html>
+        
